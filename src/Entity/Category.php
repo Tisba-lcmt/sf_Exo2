@@ -40,7 +40,7 @@ class Category
      * @ORM\Column(type="datetime")
      */
 
-    private $CreationDate;
+    private $creationDate;
 
     /**
      * @ORM\Column(type="boolean")
