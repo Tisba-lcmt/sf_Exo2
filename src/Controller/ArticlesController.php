@@ -28,4 +28,21 @@ class ArticlesController extends AbstractController
             'articles' => $articles
         ]);
     }
+
+
+    /**
+     * @Route("/article/{id}", name="article_show")
+     */
+    public function articleShow($id, ArticleRepository $articleRepository)
+    {
+        $articles = $articleRepository->find($id);
+
+        // en parametre de la méthode, je récupère la valeur de la wildcard id
+        // et je demande en plus à symfony d'instancier pour moi
+        // la classe ArticleRepository dans une variable $articleRepository
+        // (autowire)
+        return $this->render('article.html.twig', [
+            'article' => $articles
+        ]);
+    }
 }

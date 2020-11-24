@@ -9,9 +9,10 @@
     <section class="row justify-around" id="articles">
         {% for article in articles %}
             <div class="card">
-                <div class="imgArticles"><img src="{{ article.image }}" alt="Image" class="resp"></div>
-                <h1>{{ article.title }}</h1>
-                <p>{{ article.content }}</p>
+                <a href="{{ path('article_show', {'id': article.id} ) }}">
+                    <div class="imgArticles"><img src="{{ article.image }}" alt="Image" class="resp"></div>
+                </a>
+                <a href="{{ path('article_show', {'id': article.id} ) }}"><h1>{{ article.title }}</h1></a>
             </div>
         {% endfor %}
     </section>

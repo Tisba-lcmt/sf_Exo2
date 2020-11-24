@@ -6,11 +6,12 @@
 {% block main %}
 
     <main>
-        <section class="row justify-around" id="categories">
+        <section class="row justify-center" id="categories">
             {% for category in categories %}
                 <div style="background-color: {{ category.color}}"  class="card">
-                    <h1>{{ category.title }}</h1>
-                    <p>{{ category.color}}</p>
+                    <a href="{{ path('categorie_show', {'id': category.id} ) }}">
+                        <h1>{{ category.title }}</h1>
+                    </a>
                 </div>
             {% endfor %}
         </section>

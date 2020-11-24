@@ -90,6 +90,31 @@ header a {
         text-align: justify;
     }
 
+    #categories p {
+        text-align: center;
+    }
+
+    /*** Section article ***/
+
+    .container {
+        width: 70%;
+        margin: 0 auto;
+        padding: 50px 0;
+    }
+
+    #imgArticle{
+        width: 100%;
+    }
+
+    #imgArticle, #titleArticle{
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    #contentArticle {
+        text-align: justify;
+    }
+
     /*** Section categories ***/
 
     #categories .card {
@@ -109,7 +134,26 @@ header a {
         text-align: center;
     }
 
-    #categories p {
+    /*** Section category ***/
+
+    #category>.card {
+        width: 30%;
+        margin: 50px;
+        border: 2px solid black;
+        border-radius: 30px;
+    }
+
+    #category>.card a {
+        color: black;
+    }
+
+    #category>.card h1 {
+        margin: 50px 0;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    #category>.card p{
         text-align: center;
     }
 

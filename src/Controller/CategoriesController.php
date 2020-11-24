@@ -29,4 +29,20 @@ class CategoriesController extends AbstractController
             'categories' => $categories
         ]);
     }
+
+    /**
+     * @Route("/categorie/{id}", name="categorie_show")
+     */
+    public function categorieShow($id, CategoryRepository $categoriesRepository)
+    {
+        $categories = $categoriesRepository->find($id);
+
+        // en parametre de la méthode, je récupère la valeur de la wildcard id
+        // et je demande en plus à symfony d'instancier pour moi
+        // la classe ArticleRepository dans une variable $articleRepository
+        // (autowire)
+        return $this->render('category.html.twig', [
+            'category' => $categories
+        ]);
+    }
 }
