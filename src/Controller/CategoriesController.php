@@ -16,7 +16,7 @@ class CategoriesController extends AbstractController
 
     public function categoriesList(CategoryRepository $categoriesRepository)
     {
-        // Grâce à l'héritage de la classe AbstractController je peux mettre la classe
+        // Grâce à l'injection de dépendance de Symfony je peux mettre la classe
         // CategoryRepository généréé automatiquement par SF en paramètre de la méthode
         // que j'instancie dans une variable afin de récupérer toutes les catégories
         // de ma table Category en faisant des requêtes SELECT en BDD.
