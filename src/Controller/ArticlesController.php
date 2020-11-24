@@ -16,6 +16,12 @@ class ArticlesController extends AbstractController
 
     public function articlesList(ArticleRepository $articleRepository)
     {
+        // Grâce à l'héritage de la classe AbstractController je peux mettre la classe
+        // ArticleRepository généréé automatiquement par SF en paramètre de la méthode
+        // que j'instancie dans une variable afin de récupérer tous les articles de ma table
+        // Article en faisant des requêtes SELECT en BDD.
+        // La méthode findAll() de la classe ArticleRepository me permet
+        // de récupérer tous les éléments de la table Article.
         $articles = $articleRepository->findAll();
 
         return $this->render('articles.html.twig', [
