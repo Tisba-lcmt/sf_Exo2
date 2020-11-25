@@ -85,7 +85,7 @@ class ArticlesController extends AbstractController
         // J'affiche le rendu d'un fichier twig
 
         return $this->render('article.html.twig', [
-            'article' => $articles
+            'article' => $article
         ]);
     }
 }

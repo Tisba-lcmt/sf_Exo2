@@ -82,7 +82,7 @@ class CategoriesController extends AbstractController
         // J'affiche le rendu d'un fichier twig
 
         return $this->render('category.html.twig', [
-            'category' => $categories
+            'category' => $category
         ]);
     }
 }

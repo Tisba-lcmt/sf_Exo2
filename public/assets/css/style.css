@@ -72,21 +72,25 @@ header a {
 
     /*** Section articles ***/
 
-    .articles .card {
-        width: 33.33%;
-        padding: 50px;
+    #articles {
+        margin-bottom: 50px;
     }
 
-    .articles .card a {
+    #articles .card {
+        width: 33.33%;
+        padding: 50px 50px 0 50px;
+    }
+
+    #articles .card a {
         color: black;
     }
 
-    .articles .card h1 {
-        margin: 50px 0;
+    #articles .card h1 {
+        margin-top: 50px;
         text-align: center;
     }
 
-    .articles .imgArticles {
+    #articles .imgArticles {
         margin-bottom: 20px;
     }
 
