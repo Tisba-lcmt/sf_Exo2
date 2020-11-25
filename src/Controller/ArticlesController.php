@@ -75,18 +75,16 @@ class ArticlesController extends AbstractController
         // Je "pré-sauvegarde" mes modifications avec à la méthode
         // persist de l'EntityManager (comme un commit dans Git)
 
-        //$entityManager->persist($article);
+        $entityManager->persist($article);
 
         // J'insère en BDD mes données "pré-sauvegardées" par la méthode persist en utilisant
         // à la méthode flush de l'EntityManager
 
-        //$entityManager->flush();
+        $entityManager->flush();
 
         // J'affiche le rendu d'un fichier twig
 
-        return $this->render('article.html.twig', [
-            'article' => $article
-        ]);
+        return $this->redirectToRoute('articles_list');
     }
 
     /**
@@ -119,8 +117,32 @@ class ArticlesController extends AbstractController
         $entityManager->persist($article);
         $entityManager->flush();
 
-        return $this->render('update_static.html.twig', [
-            'article' => $article
-        ]);
+        return $this->redirectToRoute('articles_list');
+    }
+
+    /**
+     * @Route("article/delete/{id}", name="article_delete")
+     */
+
+    // Je récupère la wildcard de l'url dans le parametre $id.
+    // Je demande à SF d'instancier les classes ArticleRepository et
+    // EntityManager (autowire).
+
+    public function deleteArticle($id, ArticleRepository $articleRepository, EntityManagerInterface $entityManager)
+    {
+        // Je récupère en BDD l'article dont l'id correspond à celui passé en url (wildcard)
+        // pour récupérer l'article en BDD qui correspond à cette wildcard sous forme de
+        // requête SQL Select avec un filtre where id.
+
+        $article = $articleRepository->find($id);
+
+        // Si cet article existe en bdd (donc si la valeur de ma variable $article n'est pas "null")
+        // alors je le supprime avec la méthode remove de l'EntityManager.
+        if (!is_null($article)) {
+            $entityManager->remove($article);
+            $entityManager->flush();
+        }
+
+        return $this->redirectToRoute('articles_list');
     }
 }

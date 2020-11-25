@@ -6,19 +6,34 @@
 {% block main %}
 
 <main>
+
+    {# Bouton Add Article #}
+    <a href="{{ path('article_static_insert') }}">
+        <button>Ajouter l'article</button>
+    </a>
+
     <section class="row flex-wrap justify-center" id="articles">
+
         {% for article in articles %}
 
-            <div class="card relative">
+            <div class="card">
                 <a href="{{ path('article_show', {'id': article.id} ) }}">
                     <div class="imgArticles"><img src="{{ article.image }}" alt="Image" class="resp"></div>
                 </a>
                 <a href="{{ path('article_show', {'id': article.id} ) }}"><h1>{{ article.title }}</h1></a>
 
-                {# Bouton Modify Article #}
-                <a href="{{ path('article_static_update', {'id': article.id} ) }}">
-                    <button class="absolute">Modifier l'article</button>
-                </a>
+                <div class="row flex justify-around relative" id="cud">
+                    {# Bouton Modify Article #}
+                    <a href="{{ path('article_static_update', {'id': article.id} ) }}">
+                        <button>Modifier l'article</button>
+                    </a>
+
+                    {# Bouton Delete Article #}
+                    <a href="{{ path('article_delete', {'id': article.id} ) }}">
+                        <button>Supprimer l'article</button>
+                    </a>
+                </div>
+
             </div>
 
         {% endfor %}

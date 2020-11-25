@@ -73,12 +73,12 @@ header a {
     /*** Section articles ***/
 
     #articles {
-        margin-bottom: 80px;
+        margin-bottom: 40px;
     }
 
     #articles .card {
         width: 33.33%;
-        padding: 50px 50px 0 50px;
+        padding: 50px 50px 50px 50px;
     }
 
     #articles .card a {
@@ -94,10 +94,34 @@ header a {
         margin-bottom: 20px;
     }
 
-    #articles button {
+    #cud {
+        height: 50px;
+    }
+
+    #cud a:nth-of-type(1) {
         margin-top: 30px;
-        left: 50%;
-        transform: translateX(-50%);
+        width: 33.33%;
+        height: auto;
+    }
+
+    #cud a:nth-of-type(2) {
+        margin-top: 30px;
+        width: 33.33%;
+        height: auto;
+    }
+
+    /** Bouton Ajouter **/
+
+    main>a {
+        width: 33.33%;
+        display: block;
+        margin-top: 25px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    main>a>button {
+        width: 100%;
     }
 
     /*** Section article ***/
