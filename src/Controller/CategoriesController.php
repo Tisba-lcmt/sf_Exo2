@@ -49,14 +49,14 @@ class CategoriesController extends AbstractController
     }
 
     /**
-     * @Route("/category/simple-insert", name="category_simple_insert")
+     * @Route("/category/static-insert", name="category_static_insert")
      */
 
     // Je demande à Symfony d'instancier pour moi la classe EntityManager (EntityManagerInterface)
     // dans la variable $entityManager.
     // Cette classe permet de faire les requêtes INSERT, UPDATE et DELETE.
 
-    public function insertSimpleArticle(EntityManagerInterface $entityManager)
+    public function insertStaticArticle(EntityManagerInterface $entityManager)
     {
         // J'instancie ma classe Entité Article (équivalent de ma table en SQL)
         // pour pouvoir définir les valeurs de ses propriétés (et donc créer un nouvel enregistrement
