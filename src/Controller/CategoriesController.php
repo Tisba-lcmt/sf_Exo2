@@ -4,7 +4,9 @@
 namespace App\Controller;
 
 
+use App\Entity\Category;
 use App\Repository\CategoryRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -41,6 +43,44 @@ class CategoriesController extends AbstractController
         // et je demande en plus à symfony d'instancier pour moi
         // la classe ArticleRepository dans une variable $articleRepository
         // (autowire)
+        return $this->render('category.html.twig', [
+            'category' => $categories
+        ]);
+    }
+
+    /**
+     * @Route("/category/simple-insert", name="category_simple_insert")
+     */
+
+    // Je demande à Symfony d'instancier pour moi la classe EntityManager (EntityManagerInterface)
+    // dans la variable $entityManager.
+    // Cette classe permet de faire les requêtes INSERT, UPDATE et DELETE.
+
+    public function insertSimpleArticle(EntityManagerInterface $entityManager)
+    {
+        // J'instancie ma classe Entité Article (équivalent de ma table en SQL)
+        // pour pouvoir définir les valeurs de ses propriétés (et donc créer un nouvel enregistrement
+        // dans la table article en BDD <=> INSERT INTO article() VALUES(); )
+        $category = new Category();
+
+        $category->setTitle("« Le retour à la normale ne sera pas pour demain » : Emmanuel Macron annonce un allégement du confinement en trois étapes");
+        $category->setColor("#E3ED28");
+        $category->setPublicationDate(new \DateTime());
+        $category->setCreationDate(new \DateTime());
+        $category->setIsPublished(true);
+
+        // Je "pré-sauvegarde" mes modifications avec à la méthode
+        // persist de l'EntityManager (comme un commit dans Git)
+
+        //$entityManager->persist($category);
+
+        // J'insère en BDD mes données "pré-sauvegardées" par la méthode persist en utilisant
+        // à la méthode flush de l'EntityManager
+
+        //$entityManager->flush();
+
+        // J'affiche le rendu d'un fichier twig
+
         return $this->render('category.html.twig', [
             'category' => $categories
         ]);

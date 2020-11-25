@@ -27,6 +27,10 @@
     align-items: center;
 }
 
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
 w-100 {
     width: 100%;
 }
@@ -68,30 +72,22 @@ header a {
 
     /*** Section articles ***/
 
-    #articles .card {
-        width: 30%;
-        margin: 50px;
+    .articles .card {
+        width: 33.33%;
+        padding: 50px;
     }
 
-    #articles .card a {
+    .articles .card a {
         color: black;
     }
 
-    #articles .card h1 {
+    .articles .card h1 {
         margin: 50px 0;
         text-align: center;
     }
 
-    #articles .imgArticles {
+    .articles .imgArticles {
         margin-bottom: 20px;
-    }
-
-    #articles p {
-        text-align: justify;
-    }
-
-    #categories p {
-        text-align: center;
     }
 
     /*** Section article ***/
