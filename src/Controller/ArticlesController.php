@@ -88,4 +88,39 @@ class ArticlesController extends AbstractController
             'article' => $article
         ]);
     }
+
+    /**
+     * @Route("article/static-update/{id}", name="article_static_update")
+     */
+
+    // J'ai besoin de récupérer un article dans la table article donc je demande
+    // à SF d'instancier pour moi l'ArticleRepository.
+    // J'ai aussi besoin de re-enregistrer cet article donc je demande à SF
+    // d'instancier L'entityManagerInterface (EntityManager).
+
+    public function updateStaticArticle(ArticleRepository $articleRepository, EntityManagerInterface $entityManager, $id)
+    {
+        // Je récupère l'article a modifier avec la méthode find du repository
+        // La méthode find me renvoie une entité Article qui contient toutes les données
+        // de l'article (titre, content etc).
+        $article = $articleRepository->find($id);
+
+        $article->setTitle('Laurent Fabius : « En étudiant une QPC, nous devons apprécier la balance entre l’intérêt personnel du justiciable et l’intérêt général »');
+        $article->setContent('Le Conseil constitutionnel a financé d’importants travaux de recherche universitaire pour faire un bilan juridique et sociologique du recours à la question prioritaire de constitutionalité (QPC). Laurent Fabius, président de l’institution depuis 2016, y voit « une réussite incontestable ». Il annonce la création d’une base de données pour suivre le sort réservé aux QPC par les tribunaux qu’il qualifie actuellement d’« angle mort ».');
+        $article->setImage('https://img.lemde.fr/2020/11/23/0/0/5568/3712/688/0/60/0/336e8c6_289810946-000-1bz3wz.jpg');
+        $article->setPublicationDate(new \DateTime());
+        $article->setCreationDate(new \DateTime());
+        $article->setIsPublished(true);
+
+        // Une fois que j'ai modifié mon entité Article
+        // je la re-enregistre avec l'entityManager et les méthodes
+        // persist puis flush.
+
+        $entityManager->persist($article);
+        $entityManager->flush();
+
+        return $this->render('update_static.html.twig', [
+            'article' => $article
+        ]);
+    }
 }
