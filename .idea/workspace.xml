@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="710269dc-6d1d-47bc-8f88-71c8ed5467f7" name="Default Changelist" comment="" />
+    <list default="true" id="710269dc-6d1d-47bc-8f88-71c8ed5467f7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/insert.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ArticlesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticlesController.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -171,7 +175,7 @@
       <workItem from="1606143113877" duration="3268000" />
       <workItem from="1606203285095" duration="14607000" />
       <workItem from="1606294839477" duration="22414000" />
-      <workItem from="1606376088095" duration="7136000" />
+      <workItem from="1606376088095" duration="8494000" />
     </task>
     <servers />
   </component>
@@ -195,6 +199,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1606315472373" />
+    <state width="396" height="446" key="SwitcherDM" timestamp="1606390444430">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="396" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1606390444430" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1606223067945">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
