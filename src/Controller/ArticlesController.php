@@ -24,7 +24,9 @@ class ArticlesController extends AbstractController
         // de récupérer tous les éléments de la table Article.
         $articles = $articleRepository->findAll();
 
-        return $this->render('articles.html.twig', [
+        // Les afficher dans un fichier twig
+
+        return $this->render('articles/front/articles.html.twig', [
             'articles' => $articles
         ]);
     }
@@ -44,7 +46,8 @@ class ArticlesController extends AbstractController
         // une requête SQL SELECT en BDD et retrouver l'article dont l'id correspond à l'id passé en URL
         $articles = $articleRepository->find($id);
 
-        return $this->render('article.html.twig', [
+        // Les afficher dans un fichier twig
+        return $this->render('articles/front/article.html.twig', [
             'article' => $articles
         ]);
     }

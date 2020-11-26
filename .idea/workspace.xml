@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="710269dc-6d1d-47bc-8f88-71c8ed5467f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/AdminArticlesController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/articles/front/articles.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AdminArticlesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminArticlesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ArticlesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticlesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/article.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles/front/article.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/articles.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles/admin/articles.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/insert.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles/admin/insert.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/update.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles/admin/update.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,11 +162,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\Symfony\sf_Exo2\templates" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\Symfony\sf_Exo2" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Symfony\sf_Exo2\templates" />
+      <recent name="C:\xampp\htdocs\Symfony\sf_Exo2\templates\articles" />
+      <recent name="C:\xampp\htdocs\Symfony\sf_Exo2\templates\admin" />
+      <recent name="C:\xampp\htdocs\Symfony\sf_Exo2\templates\front" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -175,7 +183,7 @@
       <workItem from="1606143113877" duration="3268000" />
       <workItem from="1606203285095" duration="14607000" />
       <workItem from="1606294839477" duration="22414000" />
-      <workItem from="1606376088095" duration="20704000" />
+      <workItem from="1606376088095" duration="23902000" />
     </task>
     <servers />
   </component>

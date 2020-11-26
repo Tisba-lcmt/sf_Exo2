@@ -7,7 +7,7 @@
 <main>
 
     {# Bouton Add Article #}
-    <a href="{{ path('article_insert') }}">
+    <a href="{{ path('admin_article_insert') }}">
         <button>Ajouter l'article</button>
     </a>
 
@@ -23,12 +23,12 @@
 
                 <div class="row flex justify-around relative" id="cud">
                     {# Bouton Modify Article #}
-                    <a href="{{ path('article_update', {'id': article.id} ) }}">
+                    <a href="{{ path('admin_article_update', {'id': article.id} ) }}">
                         <button>Modifier l'article</button>
                     </a>
 
                     {# Bouton Delete Article #}
-                    <a href="{{ path('article_delete', {'id': article.id} ) }}">
+                    <a href="{{ path('admin_article_delete', {'id': article.id} ) }}">
                         <button id="myBtn">Supprimer l'article</button>
                     </a>
                 </div>

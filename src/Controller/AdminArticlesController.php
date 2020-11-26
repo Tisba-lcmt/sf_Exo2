@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdminArticlesController extends AbstractController
 {
     /**
-     * @Route("/articles", name="articles_list")
+     * @Route("admin/articles", name="admin_articles_list")
      */
 
     public function articlesList(ArticleRepository $articleRepository)
@@ -30,13 +30,13 @@ class AdminArticlesController extends AbstractController
 
         // Les afficher dans un fichier twig
 
-        return $this->render('articles.html.twig', [
+        return $this->render('articles/admin/articles.html.twig', [
             'articles' => $articles
         ]);
     }
 
     /**
-     * @Route("article/insert", name="article_insert")
+     * @Route("admin/article/insert", name="admin_article_insert")
      */
 
     public function insertArticle(Request $request, EntityManagerInterface $entityManager)
@@ -75,7 +75,7 @@ class AdminArticlesController extends AbstractController
                 "ARTICLE BIEN AJOUTÉ"
             );
 
-            return $this->redirectToRoute('articles_list');
+            return $this->redirectToRoute('admin_articles_list');
         }
 
         // Je prends le gabarit de formulaire récupéré et je créé une "vue" de formulaire
@@ -83,13 +83,13 @@ class AdminArticlesController extends AbstractController
         $formView = $form->createView();
 
         // J'envoie la vue de mon formulaire à twig
-        return $this->render('insert.html.twig', [
+        return $this->render('articles/admin/insert.html.twig', [
             'formView' => $formView
         ]);
     }
 
     /**
-     * @Route("article/update/{id}", name="article_update")
+     * @Route("admin/article/update/{id}", name="admin_article_update")
      */
 
     public function updateArticle(
@@ -101,7 +101,7 @@ class AdminArticlesController extends AbstractController
         $article = $articleRepository->find($id);
 
         if (is_null($article)) {
-            return $this->redirectToRoute('articles_list');
+            return $this->redirectToRoute('admin_articles_list');
         }
 
         $form = $this->createForm(ArticleType::class, $article);
@@ -117,18 +117,18 @@ class AdminArticlesController extends AbstractController
                 "ARTICLE BIEN MODIFIÉ"
             );
 
-            return $this->redirectToRoute('articles_list');
+            return $this->redirectToRoute('admin_articles_list');
         }
 
         $formView = $form->createView();
 
-        return $this->render('update.html.twig', [
+        return $this->render('articles/admin/update.html.twig', [
             'formView' => $formView
         ]);
     }
 
     /**
-     * @Route("article/delete/{id}", name="article_delete")
+     * @Route("admin/article/delete/{id}", name="admin_article_delete")
      */
 
     // Je récupère la wildcard de l'url dans le parametre $id.
@@ -159,6 +159,6 @@ class AdminArticlesController extends AbstractController
         }
 
         // Je fais une redirection vers ma page liste d'article une fois la suppression faite.
-        return $this->redirectToRoute('articles_list');
+        return $this->redirectToRoute('admin_articles_list');
     }
 }

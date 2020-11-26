@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ArticlesList{% endblock title %}
+
+{% block main %}
+
+    <main>
+
+        <section class="row flex-wrap justify-center" id="articles">
+
+            {% for article in articles %}
+
+                <div class="card">
+                    <a href="{{ path('article_show', {'id': article.id} ) }}">
+                        <div class="imgArticles"><img src="{{ article.image }}" alt="Image" class="resp"></div>
+                    </a>
+                    <a href="{{ path('article_show', {'id': article.id} ) }}"><h1>{{ article.title }}</h1></a>
+                    </div>
+
+                </div>
+
+            {% endfor %}
+        </section>
+
+    </main>
+{% endblock main %}
