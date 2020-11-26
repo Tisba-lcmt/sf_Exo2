@@ -84,6 +84,13 @@ class ArticlesController extends AbstractController
             // alors je l'enregistre en BDD
             $entityManager->persist($article);
             $entityManager->flush();
+
+            $this->addFlash(
+                "success",
+                "ARTICLE BIEN AJOUTÉ"
+            );
+
+            return $this->redirectToRoute('articles_list');
         }
 
         // Je prends le gabarit de formulaire récupéré et je créé une "vue" de formulaire
@@ -110,7 +117,7 @@ class ArticlesController extends AbstractController
         $article = $articleRepository->find($id);
 
         if (is_null($article)) {
-            return $this->redirectToRoute('article_list');
+            return $this->redirectToRoute('articles_list');
         }
 
         $form = $this->createForm(ArticleType::class, $article);
@@ -121,6 +128,10 @@ class ArticlesController extends AbstractController
             $entityManager->persist($article);
             $entityManager->flush();
 
+            $this->addFlash(
+                "success",
+                "ARTICLE BIEN MODIFIÉ"
+            );
 
             return $this->redirectToRoute('articles_list');
         }
