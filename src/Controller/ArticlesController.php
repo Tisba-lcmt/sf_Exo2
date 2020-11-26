@@ -8,9 +8,8 @@ use App\Entity\Article;
 use App\Form\ArticleType;
 use App\Repository\ArticleRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use phpDocumentor\Reflection\Types\True_;
-use PhpParser\Node\Expr\New_;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ArticlesController extends AbstractController
@@ -55,13 +54,37 @@ class ArticlesController extends AbstractController
      * @Route("article/insert", name="article_insert")
      */
 
-    public function insertArticle()
+    public function insertArticle(Request $request, EntityManagerInterface $entityManager)
     {
+        // Je créé une nouvelle instance de l'Entité Article
+        // pour créer un nouvel enregstrement en bdd et pour pouvoir le lier à mon formulaire.
+        $article = new Article();
+
+
         // Je veux afficher mon formulaire ArticleType pour créer des articles.
         // Dans les paramètres de la méthode createForm de l'AbstractController j'indique
         // mon gabarit de formulaire ArticleType pour le récupérer (créé en ligne de commandes)
         // et en indiquant son chemin (::class).
-        $form = $this->createForm(ArticleType::class);
+
+        // Je lie mon formulaire à l'article.
+        $form = $this->createForm(ArticleType::class, $article);
+
+
+        // Après avoir lié mon formulaire que j'ai créé au préalable, je peux récupèrer
+        // les données saisies lors du remplissage du formulaire grâce à la classe Request
+        // instanciée dans une variable $request. Cette variable applique la méthode POST.
+        // De cette manière, je pourrai utiliser la variable $form pour vérifier si
+        // les données POST ont été envoyées ou pas.
+
+        $form ->handleRequest($request);
+
+        // Si le form a été envoyé et qu'il est valide, je pré-sauvegarde et j'envoie à la BDD
+        // les données saisies dans le formulaire.
+        if ($form->isSubmitted() && $form->isValid()) {
+            // alors je l'enregistre en BDD
+            $entityManager->persist($article);
+            $entityManager->flush();
+        }
 
         // Je prends le gabarit de formulaire récupéré et je créé une "vue" de formulaire
         // pour pouvoir l'afficher dans mon fichier twig
