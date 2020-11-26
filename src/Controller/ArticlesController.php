@@ -76,7 +76,7 @@ class ArticlesController extends AbstractController
         // De cette manière, je pourrai utiliser la variable $form pour vérifier si
         // les données POST ont été envoyées ou pas.
 
-        $form ->handleRequest($request);
+        $form->handleRequest($request);
 
         // Si le form a été envoyé et qu'il est valide, je pré-sauvegarde et j'envoie à la BDD
         // les données saisies dans le formulaire.
@@ -96,37 +96,40 @@ class ArticlesController extends AbstractController
         ]);
     }
 
+
     /**
-     * @Route("article/static-update/{id}", name="article_static_update")
+     * @Route("article/update/{id}", name="article_update")
      */
 
-    // J'ai besoin de récupérer un article dans la table article donc je demande
-    // à SF d'instancier pour moi l'ArticleRepository.
-    // J'ai aussi besoin de re-enregistrer cet article donc je demande à SF
-    // d'instancier L'entityManagerInterface (EntityManager).
-
-    public function updateStaticArticle(ArticleRepository $articleRepository, EntityManagerInterface $entityManager, $id)
+    public function updateArticle(
+        $id,
+        ArticleRepository $articleRepository,
+        Request $request,
+        EntityManagerInterface $entityManager)
     {
-        // Je récupère l'article a modifier avec la méthode find du repository
-        // La méthode find me renvoie une entité Article qui contient toutes les données
-        // de l'article (titre, content etc).
         $article = $articleRepository->find($id);
 
-        $article->setTitle('Laurent Fabius : « En étudiant une QPC, nous devons apprécier la balance entre l’intérêt personnel du justiciable et l’intérêt général »');
-        $article->setContent('Le Conseil constitutionnel a financé d’importants travaux de recherche universitaire pour faire un bilan juridique et sociologique du recours à la question prioritaire de constitutionalité (QPC). Laurent Fabius, président de l’institution depuis 2016, y voit « une réussite incontestable ». Il annonce la création d’une base de données pour suivre le sort réservé aux QPC par les tribunaux qu’il qualifie actuellement d’« angle mort ».');
-        $article->setImage('https://img.lemde.fr/2020/11/23/0/0/5568/3712/688/0/60/0/336e8c6_289810946-000-1bz3wz.jpg');
-        $article->setPublicationDate(new \DateTime());
-        $article->setCreationDate(new \DateTime());
-        $article->setIsPublished(true);
+        if (is_null($article)) {
+            return $this->redirectToRoute('article_list');
+        }
 
-        // Une fois que j'ai modifié mon entité Article
-        // je la re-enregistre avec l'entityManager et les méthodes
-        // persist puis flush.
+        $form = $this->createForm(ArticleType::class, $article);
 
-        $entityManager->persist($article);
-        $entityManager->flush();
+        $form->handleRequest($request);
 
-        return $this->redirectToRoute('articles_list');
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->persist($article);
+            $entityManager->flush();
+
+
+            return $this->redirectToRoute('articles_list');
+        }
+
+        $formView = $form->createView();
+
+        return $this->render('update.html.twig', [
+            'formView' => $formView
+        ]);
     }
 
     /**
@@ -160,6 +163,7 @@ class ArticlesController extends AbstractController
             );
         }
 
+        // Je fais une redirection vers ma page liste d'article une fois la suppression faite.
         return $this->redirectToRoute('articles_list');
     }
 }
