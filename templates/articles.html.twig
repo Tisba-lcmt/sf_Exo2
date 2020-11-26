@@ -2,7 +2,6 @@
 
 {% block title %}ArticlesList{% endblock title %}
 
-
 {% block main %}
 
 <main>
@@ -30,7 +29,7 @@
 
                     {# Bouton Delete Article #}
                     <a href="{{ path('article_delete', {'id': article.id} ) }}">
-                        <button>Supprimer l'article</button>
+                        <button id="myBtn">Supprimer l'article</button>
                     </a>
                 </div>
 

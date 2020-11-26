@@ -141,6 +141,14 @@ class ArticlesController extends AbstractController
         if (!is_null($article)) {
             $entityManager->remove($article);
             $entityManager->flush();
+
+            // Si j'ai bien supprimé mon article,
+            // j'ajoute un message flash de type "succès"
+            // et je lui définis un message
+            $this->addFlash(
+                "success",
+                "ARTICLE BIEN SUPPRIME"
+            );
         }
 
         return $this->redirectToRoute('articles_list');

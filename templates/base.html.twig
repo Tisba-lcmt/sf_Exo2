@@ -17,29 +17,55 @@
 
 <body>
 
-<header>
-    <nav class="row justify-around align-center w-100">
-        <div class="logo">
-            <a href="">
-                <img src="{{ asset('assets/img/Logo.png') }}" alt="Logo Le Monde" class="resp">
-            </a>
+    <header>
+        <nav class="row justify-around align-center w-100">
+            <div class="logo">
+                <a href="">
+                    <img src="{{ asset('assets/img/Logo.png') }}" alt="Logo Le Monde" class="resp">
+                </a>
+            </div>
+            <li><a href="{{ path('categories_list') }}">Catégories</a></li>
+            <li><a href="{{ path('articles_list') }}">Articles</a></li>
+        </nav>
+
+        {# app est une variable globale définie dans twig. Elle est dispo dans tous les fichiers twig
+            et contient des informations un peu générales : les messages flashs, les infos
+            de l'utilisateur connecté (si y'en a un).#}
+        {% for message in app.flashes('success') %}
+            {# The Modal #}
+            <div id="myModal" class="modal">
+
+                {# Modal content #}
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h2>Modal Header</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p>{{ message }}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <h3>Modal Footer</h3>
+                    </div>
+                </div>
+
+            </div>
+        {% endfor %}
+
+    </header>
+
+    {% block main %}{% endblock main %}
+
+
+    <footer class="relative" id="backgroundFooter">
+
+        <div class="logo absolute">
+            <img src="{{ asset('assets/img/logo.png') }}" alt="Logo Le Monde" class="resp">
         </div>
-        <li><a href="{{ path('categories_list') }}">Catégories</a></li>
-        <li><a href="{{ path('articles_list') }}">Articles</a></li>
-    </nav>
 
-</header>
+    </footer>
 
-{% block main %}{% endblock main %}
+        <script type="text/javascript" src="{{ asset('assets/js/script.js') }}"></script>
 
-
-<footer class="relative" id="backgroundFooter">
-
-    <div class="logo absolute">
-        <img src="{{ asset('assets/img/logo.png') }}" alt="Logo Le Monde" class="resp">
-    </div>
-
-</footer>
-
-</body>
+    </body>
 </html>
