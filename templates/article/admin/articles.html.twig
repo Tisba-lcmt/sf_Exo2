@@ -18,10 +18,11 @@
             <div class="card">
                 <a href="{{ path('article_show', {'id': article.id} ) }}">
                     <div class="imgArticles"><img src="{{ article.image }}" alt="Image" class="resp"></div>
+                    <h1>{{ article.title }}</h1>
                 </a>
-                <a href="{{ path('article_show', {'id': article.id} ) }}"><h1>{{ article.title }}</h1></a>
 
                 <div class="row flex justify-around relative" id="cud">
+
                     {# Bouton Modify Article #}
                     <a href="{{ path('admin_article_update', {'id': article.id} ) }}">
                         <button>Modifier l'article</button>

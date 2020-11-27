@@ -26,7 +26,7 @@ class ArticlesController extends AbstractController
 
         // Les afficher dans un fichier twig
 
-        return $this->render('articles/front/articles.html.twig', [
+        return $this->render('article/front/articles.html.twig', [
             'articles' => $articles
         ]);
     }
@@ -47,7 +47,7 @@ class ArticlesController extends AbstractController
         $articles = $articleRepository->find($id);
 
         // Les afficher dans un fichier twig
-        return $this->render('articles/front/article.html.twig', [
+        return $this->render('article/front/article.html.twig', [
             'article' => $articles
         ]);
     }

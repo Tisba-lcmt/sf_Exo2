@@ -30,7 +30,7 @@ class AdminArticlesController extends AbstractController
 
         // Les afficher dans un fichier twig
 
-        return $this->render('articles/admin/articles.html.twig', [
+        return $this->render('article/admin/articles.html.twig', [
             'articles' => $articles
         ]);
     }
@@ -83,7 +83,7 @@ class AdminArticlesController extends AbstractController
         $formView = $form->createView();
 
         // J'envoie la vue de mon formulaire à twig
-        return $this->render('articles/admin/insert.html.twig', [
+        return $this->render('article/admin/insertArticle.html.twig', [
             'formView' => $formView
         ]);
     }
@@ -122,7 +122,7 @@ class AdminArticlesController extends AbstractController
 
         $formView = $form->createView();
 
-        return $this->render('articles/admin/update.html.twig', [
+        return $this->render('article/admin/updateArticle.html.twig', [
             'formView' => $formView
         ]);
     }
