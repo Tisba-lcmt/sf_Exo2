@@ -298,6 +298,9 @@ header a {
         height: 20px;
         margin: 5px;
     }
+    .form .errorStyle {
+        color: red;
+    }
     .form .image {
         width: 30%;
         height: 20px;

@@ -6,6 +6,7 @@ namespace App\Entity;
 
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity()\Entity()
@@ -23,6 +24,17 @@ class Article
 
     /**
      * @ORM\Column(type="string")
+     *
+     * @Assert\NotBlank(
+     *     message="Merci de remplir le titre !"
+     * )
+     *
+     * @Assert\Length(
+     *     min= 4,
+     *     max= 50,
+     *     minMessage="Trop peu de lettres !",
+     *     maxMessage="Trop de lettres !"
+     * )
      */
 
     private $title;

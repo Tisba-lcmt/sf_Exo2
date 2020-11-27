@@ -22,10 +22,11 @@
             {# form_widget permet de récupérer uniquement le bloc input sans le nom #}
             {# le tous se récupère avec le form_row et le nom du bloc en form_label #}
             {{ form_widget(formView.title, {'attr': {'class': 'title'}}) }}
+            <div class="errorStyle">{{ form_errors(formView.title) }}</div>
 
             {# <h2>Votre contenu</h2> #}
             <div></div>
-            
+
             {{ form_label(formView.content, 'Content', {'label_attr': {'class': 'contentTitle'}}) }}
             {{ form_widget(formView.content, {'attr': {'class': 'content'}}) }}
             {# <h2>Votre image</h2> #}
