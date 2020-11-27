@@ -4,11 +4,13 @@
 namespace App\Controller;
 
 
+use App\Entity\Category;
 use App\Repository\CategoryRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-class CategoriesController extends AbstractController
+class AdminCategoriesController extends AbstractController
 {
     /**
      * @Route("/categories", name="categories_list")
@@ -29,24 +31,5 @@ class CategoriesController extends AbstractController
             'categories' => $categories
         ]);
     }
-
-    /**
-     * @Route("/categorie/show/{id}", name="categorie_show")
-     */
-    // en parametre de la méthode, je récupère la valeur de la wildcard id
-    // et je demande en plus à symfony d'instancier pour moi
-    // la classe ArticleRepository dans une variable $articleRepository
-    // (autowire)
-
-    public function categorieShow($id, CategoryRepository $categoriesRepository)
-    {
-        // J'utilise l'ArticleRepository avec la méthode find pour faire
-        // une requête SQL SELECT en BDD et retrouver l'article dont l'id correspond à l'id passé en URL
-        $categories = $categoriesRepository->find($id);
-
-        // Les afficher dans un fichier twig
-        return $this->render('category.html.twig', [
-            'category' => $categories
-        ]);
-    }
+    
 }
