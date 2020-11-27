@@ -11,28 +11,54 @@
         (avec en parametre la variable de formulaire twig #}
 
         <h1>Ajouter un article</h1>
-        {# form(formView) => recupere le formulaire est l'affiche champs apres champs #}
+        {# form(formView) => recupere le formulaire et l'affiche champs apres champs #}
         {{ form_start(formView) }}
         <div class="centrer">
-            <h2>Votre titre</h2>
+
+            {# <h2>Votre titre</h2> #}
+            <div></div>
+
+            {{ form_label(formView.title) }}
+            {# form_widget permet de récupérer uniquement le bloc input sans le nom #}
+            {# le tous se récupère avec le form_row et le nom du bloc en form_label #}
             {{ form_widget(formView.title, {'attr': {'class': 'title'}}) }}
-            <h2>Votre contenu</h2>
+
+            {# <h2>Votre contenu</h2> #}
+            <div></div>
+            
+            {{ form_label(formView.content, 'Content', {'label_attr': {'class': 'contentTitle'}}) }}
             {{ form_widget(formView.content, {'attr': {'class': 'content'}}) }}
-            <h2>Votre image</h2>
+            {# <h2>Votre image</h2> #}
+            <div></div>
+
+            {{ form_label(formView.image) }}
             {{ form_widget(formView.image, {'attr': {'class': 'image'}}) }}
             <div class="date">
                 <div>
-                    <h2>Votre date de publication</h2>
+
+                    {# <h2>Votre date de publication</h2> #}
+                    <div></div>
+
+                    {{ form_label(formView.publicationDate) }}
                     {{ form_widget(formView.publicationDate, {'attr': {'class': 'publicationDate'}}) }}
                 </div>
                 <div>
-                    <h2>Votre date de création</h2>
+
+                    {# <h2>Votre date de création</h2> #}
+                    <div></div>
+
+                    {{ form_label(formView.creationDate) }}
                     {{ form_widget(formView.creationDate, {'attr': {'class': 'creationDate'}}) }}
                 </div>
             </div>
-            <h2>est publié</h2>
+
+            {# <h2>est publié</h2> #}
+            <div></div>
+
+            {{ form_label(formView.isPublished) }}
             {{ form_widget(formView.isPublished, {'attr': {'class': 'isPublished'}}) }}
         </div>
+        {{ form_label(formView.Envoyer) }}
         {{ form_widget(formView.Envoyer, {'attr': {'class': 'Envoyer'}}) }}
         {{ form_end(formView) }}
 

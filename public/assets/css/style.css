@@ -289,13 +289,15 @@ header a {
         height: 200px;
         margin: 5px;
     }
-
+    .form .contentTitle {
+        width: 100%;
+        height: auto;
+    }
     .form .color {
         width: 20%;
         height: 20px;
         margin: 5px;
     }
-
     .form .image {
         width: 30%;
         height: 20px;
@@ -307,7 +309,7 @@ header a {
         justify-content: center;
     }
 
-    .form div {
+    .form div:not(.position) {
         margin: 5px 20px;
     }
 

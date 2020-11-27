@@ -4,12 +4,7 @@
     <list default="true" id="710269dc-6d1d-47bc-8f88-71c8ed5467f7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ArticleType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ArticleType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/CategoryType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CategoryType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/article/admin/insertArticle.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/admin/insertArticle.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/article/admin/updateArticle.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/admin/updateArticle.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/category/admin/insertCategory.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category/admin/insertCategory.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/category/admin/updateCategory.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category/admin/updateCategory.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +155,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -187,7 +182,7 @@
       <workItem from="1606203285095" duration="14607000" />
       <workItem from="1606294839477" duration="22414000" />
       <workItem from="1606376088095" duration="26260000" />
-      <workItem from="1606462766375" duration="16480000" />
+      <workItem from="1606462766375" duration="21629000" />
     </task>
     <servers />
   </component>
@@ -207,10 +202,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="555" y="135" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1606467690575" />
-    <state x="277" y="57" key="SettingsEditor" timestamp="1606315472373">
+    <state x="277" y="57" key="SettingsEditor" timestamp="1606494501830">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1606315472373" />
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1606494501830" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1606488574422">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
