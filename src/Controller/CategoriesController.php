@@ -25,7 +25,7 @@ class CategoriesController extends AbstractController
 
         $categories = $categoriesRepository->findAll();
 
-        return $this->render('categories.html.twig', [
+        return $this->render('category/front/categories.html.twig', [
             'categories' => $categories
         ]);
     }
@@ -45,7 +45,7 @@ class CategoriesController extends AbstractController
         $categories = $categoriesRepository->find($id);
 
         // Les afficher dans un fichier twig
-        return $this->render('category.html.twig', [
+        return $this->render('category/front/category.html.twig', [
             'category' => $categories
         ]);
     }

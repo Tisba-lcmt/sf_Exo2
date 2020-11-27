@@ -6,7 +6,6 @@ namespace App\Controller;
 
 use App\Entity\Category;
 use App\Form\CategoryType;
-use App\Repository\ArticleRepository;
 use App\Repository\CategoryRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -16,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdminCategoriesController extends AbstractController
 {
     /**
-     * @Route("/categories", name="categories_list")
+     * @Route("/admin/categories", name="admin_categories_list")
      */
 
     public function categoriesList(CategoryRepository $categoriesRepository)
@@ -30,13 +29,13 @@ class AdminCategoriesController extends AbstractController
 
         $categories = $categoriesRepository->findAll();
 
-        return $this->render('categories.html.twig', [
+        return $this->render('category/admin/categories.html.twig', [
             'categories' => $categories
         ]);
     }
 
     /**
-     * @Route("/category/insert", name="category_insert")
+     * @Route("/admin/category/insert", name="admin_category_insert")
      */
 
     public function insertCategory(Request $request, EntityManagerInterface $entityManager)
@@ -73,7 +72,7 @@ class AdminCategoriesController extends AbstractController
                 "CATEGORY BIEN AJOUTÉ"
             );
 
-            return $this->redirectToRoute('categories_list');
+            return $this->redirectToRoute('admin_categories_list');
         }
 
         // Je prends le gabarit de formulaire récupéré et je créé une "vue" de formulaire
@@ -81,13 +80,13 @@ class AdminCategoriesController extends AbstractController
 
         $formView = $form->createView();
 
-        return $this->render('insertCategory.html.twig', [
+        return $this->render('category/admin/insertCategory.html.twig', [
             'formView' => $formView
         ]);
     }
 
     /**
-     * @Route("/category/update/{id}", name="category_update")
+     * @Route("/admin/category/update/{id}", name="admin_category_update")
      */
 
     public function updateCategory(
@@ -99,7 +98,7 @@ class AdminCategoriesController extends AbstractController
         $category = $categoryRepository->find($id);
 
         if (is_null($category)) {
-            return $this->redirectToRoute('categories_list');
+            return $this->redirectToRoute('admin_categories_list');
         }
 
         $form = $this->createForm(CategoryType::class, $category);
@@ -114,18 +113,18 @@ class AdminCategoriesController extends AbstractController
                 "success",
                 "CATEGORY BIEN MODIFIÉ"
             );
-            return $this->redirectToRoute('categories_list');
+            return $this->redirectToRoute('admin_categories_list');
         }
 
         $formView = $form->createView();
 
-        return $this->render('updateCategory.html.twig', [
+        return $this->render('category/admin/updateCategory.html.twig', [
            'formView' => $formView
         ]);
     }
 
     /**
-     * @Route("/category/delete/{id}", name="category_delete")
+     * @Route("/admin/category/delete/{id}", name="admin_category_delete")
      */
 
     // Je récupère la wildcard de l'url dans le parametre $id.
@@ -159,7 +158,7 @@ class AdminCategoriesController extends AbstractController
             );
         }
         // Je fais une redirection vers ma page liste d'article une fois la suppression faite.
-        return $this->redirectToRoute('categories_list');
+        return $this->redirectToRoute('admin_categories_list');
     }
 
 }
