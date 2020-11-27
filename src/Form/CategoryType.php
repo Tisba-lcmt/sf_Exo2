@@ -17,8 +17,12 @@ class CategoryType extends AbstractType
         $builder
             ->add('title')
             ->add('color')
-            ->add('publicationDate')
-            ->add('creationDate')
+            ->add('publicationDate', \DateTime::class, [
+                'widget' => 'single_text'
+            ])
+            ->add('creationDate', \DateTime::class, [
+                'widget' => 'single_text'
+            ])
             ->add('isPublished')
             ->add('Envoyer', SubmitType::class)
         ;
