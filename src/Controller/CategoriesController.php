@@ -38,7 +38,7 @@ class CategoriesController extends AbstractController
     // la classe ArticleRepository dans une variable $articleRepository
     // (autowire)
 
-    public function categorieShow($id, CategoryRepository $categoriesRepository)
+    public function categoryShow($id, CategoryRepository $categoriesRepository)
     {
         // J'utilise l'ArticleRepository avec la méthode find pour faire
         // une requête SQL SELECT en BDD et retrouver l'article dont l'id correspond à l'id passé en URL
