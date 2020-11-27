@@ -5,11 +5,36 @@
 
 {% block main %}
 
-    <main>
+    <main class="form">
 
         {# J'utilise la fonction twig form pour afficher mon formulaire
         (avec en parametre la variable de formulaire twig #}
-        {{ form(formView) }}
+
+        <h1>Ajouter un article</h1>
+        {# form(formView) => recupere le formulaire est l'affiche champs apres champs #}
+        {{ form_start(formView) }}
+        <div class="centrer">
+            <h2>Votre titre</h2>
+            {{ form_widget(formView.title, {'attr': {'class': 'title'}}) }}
+            <h2>Votre contenu</h2>
+            {{ form_widget(formView.content, {'attr': {'class': 'content'}}) }}
+            <h2>Votre image</h2>
+            {{ form_widget(formView.image, {'attr': {'class': 'image'}}) }}
+            <div class="date">
+                <div>
+                    <h2>Votre date de publication</h2>
+                    {{ form_widget(formView.publicationDate, {'attr': {'class': 'publicationDate'}}) }}
+                </div>
+                <div>
+                    <h2>Votre date de création</h2>
+                    {{ form_widget(formView.creationDate, {'attr': {'class': 'creationDate'}}) }}
+                </div>
+            </div>
+            <h2>est publié</h2>
+            {{ form_widget(formView.isPublished, {'attr': {'class': 'isPublished'}}) }}
+        </div>
+        {{ form_widget(formView.Envoyer, {'attr': {'class': 'Envoyer'}}) }}
+        {{ form_end(formView) }}
 
     </main>
 

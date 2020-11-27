@@ -184,19 +184,21 @@ header a {
         height: auto;
     }
 
-    /** Bouton Ajouter **/
+    /** Admin Version **/
 
-    main>a {
-        width: 33.33%;
-        display: block;
-        margin-top: 50px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+        /** Bouton Ajouter **/
 
-    main>a>button {
-        width: 100%;
-    }
+        main>a {
+            width: 33.33%;
+            display: block;
+            margin-top: 50px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        main>a>button {
+            width: 100%;
+        }
 
     /*** Section article ***/
 
@@ -259,6 +261,76 @@ header a {
 
     #category>.card p{
         text-align: center;
+    }
+
+    /** Custom Formulaire **/
+
+    .form {
+        text-align: center;
+    }
+
+    .form h1 {
+        margin-top: 20px;
+    }
+
+    .form h2 {
+        font-size: 20px;
+    }
+
+    .form .title {
+        width: 30%;
+        height: 20px;
+        border: 1px black solid;
+        margin: 5px;
+    }
+
+    .form .content {
+        width: 50%;
+        height: 200px;
+        margin: 5px;
+    }
+
+    .form .color {
+        width: 20%;
+        height: 20px;
+        margin: 5px;
+    }
+
+    .form .image {
+        width: 30%;
+        height: 20px;
+        margin: 5px;
+    }
+
+    .form .date {
+        display: flex;
+        justify-content: center;
+    }
+
+    .form div {
+        margin: 5px 20px;
+    }
+
+    .form .publicationDate {
+        width: 150px;
+        margin: 5px 10px;
+    }
+
+    .form .creationDate {
+        width: 150px;
+        margin: 5px;
+    }
+
+    .form .isPublished {
+        width:  30px;
+        margin: 5px;
+    }
+
+    .form .Envoyer{
+        width: 100px;
+        height: 50px;
+        border-radius: 50px;
+        margin: 30px;
     }
 
 /*** Fin du Main ***/
