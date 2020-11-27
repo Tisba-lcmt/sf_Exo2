@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdminArticlesController extends AbstractController
 {
     /**
-     * @Route("admin/articles", name="admin_articles_list")
+     * @Route("/admin/articles", name="admin_articles_list")
      */
 
     public function articlesList(ArticleRepository $articleRepository)
@@ -36,7 +36,7 @@ class AdminArticlesController extends AbstractController
     }
 
     /**
-     * @Route("admin/article/insert", name="admin_article_insert")
+     * @Route("/admin/article/insert", name="admin_article_insert")
      */
 
     public function insertArticle(Request $request, EntityManagerInterface $entityManager)
@@ -89,7 +89,7 @@ class AdminArticlesController extends AbstractController
     }
 
     /**
-     * @Route("admin/article/update/{id}", name="admin_article_update")
+     * @Route("/admin/article/update/{id}", name="admin_article_update")
      */
 
     public function updateArticle(
@@ -128,7 +128,7 @@ class AdminArticlesController extends AbstractController
     }
 
     /**
-     * @Route("admin/article/delete/{id}", name="admin_article_delete")
+     * @Route("/admin/article/delete/{id}", name="admin_article_delete")
      */
 
     // Je récupère la wildcard de l'url dans le parametre $id.

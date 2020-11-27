@@ -31,7 +31,7 @@ class CategoriesController extends AbstractController
     }
 
     /**
-     * @Route("/categorie/show/{id}", name="categorie_show")
+     * @Route("/category/show/{id}", name="category_show")
      */
     // en parametre de la méthode, je récupère la valeur de la wildcard id
     // et je demande en plus à symfony d'instancier pour moi
