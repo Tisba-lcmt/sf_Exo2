@@ -2,22 +2,21 @@
 
 namespace App\Form;
 
-use App\Entity\Article;
+use App\Entity\Category;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class ArticleType extends AbstractType
+class CategoryType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         // La ligne de commande bin/console make:form va générer automatiquement ce fichier.
-        // C'est un gabarit de formulaire pour l'Entité Article que j'ai spécifié en ligne de commande
+        // C'est un gabarit de formulaire pour l'Entité Category que j'ai spécifié en ligne de commande
         $builder
             ->add('title')
-            ->add('content')
-            ->add('image')
+            ->add('color')
             ->add('publicationDate')
             ->add('creationDate')
             ->add('isPublished')
@@ -28,7 +27,7 @@ class ArticleType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Article::class,
+            'data_class' => Category::class,
         ]);
     }
 }
