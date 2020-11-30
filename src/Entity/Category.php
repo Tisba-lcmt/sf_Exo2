@@ -3,6 +3,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -47,6 +49,27 @@ class Category
      */
 
     private $isPublished;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Article::class, mappedBy="category")
+     *
+     * La propriété articles représente la relation inverse du ManyToOne
+     * C'est donc un OneToMany qui veut dire pour une category peut avoir plusieurs articles
+     * Il cible l'entité Article. Le mappedBy représente la propriété dans l'entité Article,
+     * qui re-pointe vers l'entité Category.
+     */
+    private $articles;
+
+    /**
+     * Dans la méthode constructor (__construct() qui est appelée automatiquement) à chaque
+     * fois que la classe est instanciée (donc avec le mot clé "new"). C'est une méthode "Magique" en PHP.
+     * Je déclare que la propriété articles qui est un array (un ArrayCollection plus exactement,
+     * qui est une sorte d'array avec des super pouvoirs)
+     */
+    public function __construct()
+    {
+        $this->articles = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -109,6 +132,44 @@ class Category
     public function setIsPublished(bool $isPublished): self
     {
         $this->isPublished = $isPublished;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Article[]
+     */
+    public function getArticles(): Collection
+    {
+        return $this->articles;
+    }
+
+    /**
+     * La méthode addArticle permet d'ajouter pour la catégorie
+     * un article, sans écraser les autres (vu que la propriété
+     * articles est un tableau, on peut avoir plusieurs articles)
+     */
+    public function addArticle(Article $article): self
+    {
+        if (!$this->articles->contains($article)) {
+            $this->articles[] = $article;
+            $article->setCategory($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Cette méthode permet de supprimer un article, sans supprimer les autres.
+     */
+    public function removeArticle(Article $article): self
+    {
+        if ($this->articles->removeElement($article)) {
+            // set the owning side to null (unless already changed)
+            if ($article->getCategory() === $this) {
+                $article->setCategory(null);
+            }
+        }
 
         return $this;
     }

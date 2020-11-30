@@ -86,6 +86,19 @@ class Article
 
     private $isPublished;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="articles")
+     *
+     * J'ai fais un update de mon Entité Article à l'aide de la ligne de commande
+     * php bin/console make:entity, j'ai créé une nouvelle propriété dans Article ($category).
+     * Cette propriété représente la relation vers Article (cible Category)
+     * La relation est un ManyToOe car je veux avoir une seule catégorie par article, mais
+     * qui pourrait contenir plusieurs articles par categorie.
+     * Le inversedBy permet de savoir dans l'Entité reliée (donc Category), la propriété
+     * qui re-pointe vers l'entité Article (ici c'est la propriété articles)
+     */
+    private $category;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -159,6 +172,18 @@ class Article
     public function setIsPublished(bool $isPublished): self
     {
         $this->isPublished = $isPublished;
+
+        return $this;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
 
         return $this;
     }
