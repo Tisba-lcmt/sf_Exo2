@@ -9,15 +9,18 @@
         <section class="row flex-wrap justify-center" id="articles">
 
             {% for article in articles %}
-
-                <div class="card">
-                    <a href="{{ path('article_show', {'id': article.id} ) }}">
-                        <div class="imgArticles"><img src="{{ article.image }}" alt="Image" class="resp"></div>
-                    </a>
-                    <a href="{{ path('article_show', {'id': article.id} ) }}"><h1>{{ article.title }}</h1></a>
+                    <div class="card">
+                        <a href="{{ path('article_show', {'id': article.id} ) }}">
+                            <div class="imgArticles"><img src="{{ article.image }}" alt="Image" class="resp"></div>
+                        </a>
+                    {% if article.category is null %}
+                        <p>Cette article n'est pas rangé dans une catégorie</p>
+                    {% else %}
+                        <a href="{{ path('article_show', {'id': article.id} ) }}">
+                            <h1 style="background-color :{{ article.category.color }};">{{ article.title }}</h1>
+                        </a>
                     </div>
-
-                </div>
+                    {% endif %}
 
             {% endfor %}
         </section>
