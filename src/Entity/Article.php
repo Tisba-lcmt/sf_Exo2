@@ -40,7 +40,7 @@ class Article
     private $title;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      *
      * @Assert\Length(
      *     min= 4,
@@ -53,7 +53,7 @@ class Article
     private $content;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      *
      * @Assert\NotBlank(
      *     message="Merci de mettre l'URL de l'image !"
@@ -63,14 +63,14 @@ class Article
     private $image;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      *
      */
 
     private $publicationDate;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      *
      * @Assert\NotBlank(
      * message="Merci de mettre la Date de Création !"
@@ -80,7 +80,7 @@ class Article
     private $creationDate;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", nullable=true)
      *
      */
 
