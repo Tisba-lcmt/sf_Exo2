@@ -58,12 +58,19 @@
                 </div>
             </div>
 
+            <div></div>
+            {# <h2>Votre Catégorie</h2> #}
+            {{ form_label(formView.category) }}
+            {{ form_widget(formView.category, {'attr': {'class': 'articleCategoryTitle'}}) }}
+            {{ form_errors(formView.category) }}
+
             {# <h2>est publié</h2> #}
             <div></div>
 
             {{ form_label(formView.isPublished) }}
             {{ form_widget(formView.isPublished, {'attr': {'class': 'isPublished'}}) }}
             <div class="errorStyle">{{ form_errors(formView.isPublished) }}</div>
+
         </div>
         {{ form_label(formView.Envoyer) }}
         {{ form_widget(formView.Envoyer, {'attr': {'class': 'Envoyer'}}) }}
