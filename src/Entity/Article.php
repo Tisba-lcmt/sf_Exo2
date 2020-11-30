@@ -42,10 +42,6 @@ class Article
     /**
      * @ORM\Column(type="text")
      *
-     * @Assert\NotBlank(
-     *     message="Merci de remplir le contenu !"
-     * )
-     *
      * @Assert\Length(
      *     min= 4,
      *     max= 50,
@@ -69,10 +65,6 @@ class Article
     /**
      * @ORM\Column(type="datetime")
      *
-     * @Assert\NotBlank(
-     * message="Merci de mettre la Date de Publication !"
-     * )
-     *
      */
 
     private $publicationDate;
@@ -90,9 +82,6 @@ class Article
     /**
      * @ORM\Column(type="boolean")
      *
-     * @Assert\IsTrue(
-     *     message="La case n'est pas cochée"
-     * )
      */
 
     private $isPublished;
