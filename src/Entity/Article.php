@@ -31,7 +31,7 @@ class Article
      *
      * @Assert\Length(
      *     min= 4,
-     *     max= 50,
+     *     max= 15,
      *     minMessage="Trop peu de lettres !",
      *     maxMessage="Trop de lettres !"
      * )
@@ -41,30 +41,58 @@ class Article
 
     /**
      * @ORM\Column(type="text")
+     *
+     * @Assert\NotBlank(
+     *     message="Merci de remplir le contenu !"
+     * )
+     *
+     * @Assert\Length(
+     *     min= 4,
+     *     max= 50,
+     *     minMessage="Trop peu de lettres !",
+     *     maxMessage="Trop de lettres !"
+     * )
      */
 
     private $content;
 
     /**
      * @ORM\Column(type="string")
+     *
+     * @Assert\NotBlank(
+     *     message="Merci de mettre l'URL de l'image !"
+     * )
      */
 
     private $image;
 
     /**
      * @ORM\Column(type="datetime")
+     *
+     * @Assert\NotBlank(
+     * message="Merci de mettre la Date de Publication !"
+     * )
+     *
      */
 
     private $publicationDate;
 
     /**
      * @ORM\Column(type="datetime")
+     *
+     * @Assert\NotBlank(
+     * message="Merci de mettre la Date de Création !"
+     * )
      */
 
     private $creationDate;
 
     /**
      * @ORM\Column(type="boolean")
+     *
+     * @Assert\IsTrue(
+     *     message="La case n'est pas cochée"
+     * )
      */
 
     private $isPublished;
@@ -115,7 +143,7 @@ class Article
         return $this->publicationDate;
     }
 
-    public function setPublicationDate(\DateTimeInterface $publicationDate): self
+    public function setPublicationDate( $publicationDate): self
     {
         $this->publicationDate = $publicationDate;
 
@@ -127,7 +155,7 @@ class Article
         return $this->creationDate;
     }
 
-    public function setCreationDate(\DateTimeInterface $creationDate): self
+    public function setCreationDate( $creationDate): self
     {
         $this->creationDate = $creationDate;
 

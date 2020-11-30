@@ -29,11 +29,14 @@
 
             {{ form_label(formView.content, 'Content', {'label_attr': {'class': 'contentTitle'}}) }}
             {{ form_widget(formView.content, {'attr': {'class': 'content'}}) }}
+            <div class="errorStyle">{{ form_errors(formView.content) }}</div>
+
             {# <h2>Votre image</h2> #}
             <div></div>
 
             {{ form_label(formView.image) }}
             {{ form_widget(formView.image, {'attr': {'class': 'image'}}) }}
+            <div class="errorStyle">{{ form_errors(formView.image) }}</div>
             <div class="date">
                 <div>
 
@@ -42,6 +45,7 @@
 
                     {{ form_label(formView.publicationDate) }}
                     {{ form_widget(formView.publicationDate, {'attr': {'class': 'publicationDate'}}) }}
+                    <div class="errorStyle">{{ form_errors(formView.publicationDate) }}</div>
                 </div>
                 <div>
 
@@ -50,6 +54,7 @@
 
                     {{ form_label(formView.creationDate) }}
                     {{ form_widget(formView.creationDate, {'attr': {'class': 'creationDate'}}) }}
+                    <div class="errorStyle">{{ form_errors(formView.creationDate) }}</div>
                 </div>
             </div>
 
@@ -58,6 +63,7 @@
 
             {{ form_label(formView.isPublished) }}
             {{ form_widget(formView.isPublished, {'attr': {'class': 'isPublished'}}) }}
+            <div class="errorStyle">{{ form_errors(formView.isPublished) }}</div>
         </div>
         {{ form_label(formView.Envoyer) }}
         {{ form_widget(formView.Envoyer, {'attr': {'class': 'Envoyer'}}) }}
