@@ -31,7 +31,7 @@ class Article
      *
      * @Assert\Length(
      *     min= 4,
-     *     max= 15,
+     *     max= 255,
      *     minMessage="Trop peu de lettres !",
      *     maxMessage="Trop de lettres !"
      * )
@@ -41,26 +41,15 @@ class Article
 
     /**
      * @ORM\Column(type="text", nullable=true)
-     *
-     * @Assert\Length(
-     *     min= 4,
-     *     max= 50,
-     *     minMessage="Trop peu de lettres !",
-     *     maxMessage="Trop de lettres !"
-     * )
      */
 
     private $content;
 
     /**
      * @ORM\Column(type="string", nullable=true)
-     *
-     * @Assert\NotBlank(
-     *     message="Merci de mettre l'URL de l'image !"
-     * )
      */
 
-    private $image;
+    private $imageFileName;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
@@ -128,18 +117,6 @@ class Article
         return $this;
     }
 
-    public function getImage(): ?string
-    {
-        return $this->image;
-    }
-
-    public function setImage(string $image): self
-    {
-        $this->image = $image;
-
-        return $this;
-    }
-
     public function getPublicationDate(): ?\DateTimeInterface
     {
         return $this->publicationDate;
@@ -188,4 +165,19 @@ class Article
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getImageFileName()
+    {
+        return $this->imageFileName;
+    }
+
+    /**
+     * @param mixed $imageFileName
+     */
+    public function setImageFileName($imageFileName): void
+    {
+        $this->imageFileName = $imageFileName;
+    }
 }

@@ -9,7 +9,9 @@
 
         <section class="container">
             {# Row 1 #}
-            <div class="row justify-center"><div id="imgArticle"><img src="{{ article.image }}" alt="Image" class="resp"></div></div>
+            <div class="row justify-center"><div id="imgArticle">
+                    <img src="{{ asset('uploads/articles/' ~ article.imageFileName) }}" alt="Image" class="resp">
+                </div></div>
             {# Row 2 #}
             <div class="row justify-center"><div id="titleArticle"><h1>{{ article.title }}</h1></div></div>
             {# Row 3 #}

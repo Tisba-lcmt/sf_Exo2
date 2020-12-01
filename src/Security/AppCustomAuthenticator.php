@@ -98,7 +98,7 @@ class AppCustomAuthenticator extends AbstractFormLoginAuthenticator implements P
         }
 
         // Page de redirection dès que je me connecte en faisant une redirection de réponse http via url
-        return new RedirectResponse($this->urlGenerator->generate('articles_list'));
+        return new RedirectResponse($this->urlGenerator->generate('admin_articles_list'));
         // For example : return new RedirectResponse($this->urlGenerator->generate('some_route'));
         // throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }

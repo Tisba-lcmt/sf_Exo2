@@ -25,23 +25,23 @@
                 </a>
             </div>
 
-            // J'affiche un lien si l'utilisateur est connecté
+            {# J'affiche un lien si l'utilisateur est connecté #}
             {% if app.user %}
-                <li><a href="{{ path('app_logout') }}">Déconnexion</a></li>
 
                 {% if is_granted("ROLE_MEMBRE") %}
                     <li><a href="{{ path('articles_list') }}">Articles</a></li>
                     <li><a href="{{ path('categories_list') }}">Catégories</a></li>
                 {% endif %}
 
-                // J'affiche des liens de navigations en fonction de leurs rôles
+                {# J'affiche des liens de navigations en fonction de leurs rôles #}
                 {% if is_granted("ROLE_ADMIN") %}
                     <li><a href="{{ path('admin_articles_list') }}">AdminArticles</a></li>
                     <li><a href="{{ path('admin_categories_list') }}">AdminCategories</a></li>
                 {% endif %}
 
+                <li><a href="{{ path('app_logout') }}">Déconnexion</a></li>
             {% else %}
-                // J'affiche ma page vitrine pour les visiteurs
+                {# J'affiche ma page vitrine pour les visiteurs #}
                 <li><a href="{{ path('articles_list') }}">Articles</a></li>
                 <li><a href="{{ path('categories_list') }}">Catégories</a></li>
                 <li><a href="{{ path('app_login') }}">Connexion</a></li>

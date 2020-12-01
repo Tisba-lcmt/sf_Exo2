@@ -17,7 +17,13 @@
 
             <div class="card">
                 <a href="{{ path('article_show', {'id': article.id} ) }}">
-                    <div class="imgArticles"><img src="{{ article.image }}" alt="Image" class="resp"></div>
+                    {% if article.imageFileName %}
+                        {# je récupère le nom du fichier uploadé pour cet article que je concatène avec le dossier
+                        dans lequel il a été uploadé #}
+                    <div class="imgArticles">
+                        <img src="{{ asset('uploads/articles/' ~ article.imageFileName) }}" alt="Image" class="resp">
+                    </div>
+                    {% endif %}
                     <h1>{{ article.title }}</h1>
                 </a>
 
