@@ -6,6 +6,8 @@ use App\Repository\UserProfilRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
+//les entitées user permettent de definir les types des champs de la table user en bdd
+
 /**
  * @ORM\Entity(repositoryClass=UserProfilRepository::class)
  */
@@ -83,6 +85,8 @@ class UserProfil implements UserInterface
     /**
      * @see UserInterface
      */
+
+    //la fonction getpasseword recuperer le mot de passe
     public function getPassword(): string
     {
         return (string) $this->password;
