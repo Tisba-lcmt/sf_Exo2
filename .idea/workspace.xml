@@ -3,11 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="710269dc-6d1d-47bc-8f88-71c8ed5467f7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AdminArticlesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/admin/AdminArticlesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AdminCategoriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/admin/AdminCategoriesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ArticlesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/front/ArticlesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CategoriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/front/CategoriesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/security/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/admin/AdminArticlesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/admin/AdminArticlesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/admin/AdminCategoriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/admin/AdminCategoriesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/front/ArticlesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/front/ArticlesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/front/CategoriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/front/CategoriesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/security/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/security/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/TestRepository.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,14 +152,14 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../projets/sf_Batcine" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sf_Exo1" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -189,7 +190,13 @@
       <workItem from="1606499037018" duration="2000" />
       <workItem from="1606722436157" duration="23708000" />
       <workItem from="1606808098423" duration="28539000" />
-      <workItem from="1606895253452" duration="4053000" />
+      <workItem from="1606895253452" duration="9316000" />
+      <workItem from="1606923181689" duration="1958000" />
+      <workItem from="1606935156768" duration="4968000" />
+      <workItem from="1606980958779" duration="62000" />
+      <workItem from="1606981032323" duration="1391000" />
+      <workItem from="1606982607367" duration="6000" />
+      <workItem from="1606982624730" duration="6483000" />
     </task>
     <servers />
   </component>
@@ -205,18 +212,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1606489182198" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1606895267650">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1606987602572">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1606895267650" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1606987602572" />
     <state x="555" y="135" key="NewPhpClassDialog" timestamp="1606467690575">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="555" y="135" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1606467690575" />
-    <state x="277" y="57" key="SettingsEditor" timestamp="1606862562823">
+    <state x="277" y="57" key="SettingsEditor" timestamp="1606903116656">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1606862562823" />
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1606903116656" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1606488574422">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
